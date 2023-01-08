@@ -6,10 +6,12 @@ export const db = mysql.createConnection({
 	user: 'root',
 	password: 'password',
 	database: 'social',
-	insecureAuth: true,
 });
 
 db.connect(function (err) {
-	if (err) throw err;
-	console.log('Mysql database is Connected!'.cyan.underline);
+	if (err) {
+		return console.error('error: ' + err.message);
+	}
+
+	console.log('Connected to the MySQL server.');
 });
