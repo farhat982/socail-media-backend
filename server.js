@@ -1,6 +1,5 @@
 import express from 'express';
 import colors from 'colors';
-const app = express();
 import cors from 'cors';
 import userRoutes from './routes/users.js';
 import authRoutes from './routes/auth.js';
