@@ -26,7 +26,7 @@ app.use(helmet());
 
 app.use(cookieParser());
 app.use(
-	cors({ origin: 'https://social-media-backend-i91c.onrender.com', credentials: true })
+	cors({ origin: 'https://social-media-frontend-6pqb.onrender.com', credentials: true })
 );
 app.set('trust proxy', 1);
 
