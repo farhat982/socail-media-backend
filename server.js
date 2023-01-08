@@ -11,16 +11,24 @@ import relationshipRoutes from './routes/relationships.js';
 import cookieParser from 'cookie-parser';
 import multer from 'multer';
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Credentials', true);
-  next();
-});
+const app = express();
 
+app.use((req, res, next) => {
+	res.header('Access-Control-Allow-Credentials', true);
+	next();
+});
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+
+app.use(helmet());
+
+app.use(cookieParser());
 app.use(
 	cors({ origin: 'https://social-media-backend-i91c.onrender.com', credentials: true })
 );
-app.use(express.json());
-app.use(cookieParser());
+app.set('trust proxy', 1);
+
 
 //upload images in own server//
 const storage = multer.diskStorage({
