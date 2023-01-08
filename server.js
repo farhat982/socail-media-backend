@@ -10,6 +10,7 @@ import relationshipRoutes from './routes/relationships.js';
 import cookieParser from 'cookie-parser';
 import multer from 'multer';
 import bodyParser from 'body-parser';
+import helmet from 'helmet'
 
 const app = express();
 
